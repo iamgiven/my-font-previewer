@@ -5,124 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Font Preview</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 0 20px;
-        }
-
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        @font-face {
-            font-family: 'CustomFont';
-            src: url('./fonts/Myfont-Regular.ttf') format('truetype');
-        }
-
-        .custom-font {
-            font-family: 'CustomFont';
-            font-size: 40px;
-            margin: 20px 0;
-            color: #333;
-        }
-
-        label {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        input[type="range"] {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            font-size: 1.1rem;
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        input[type="text"]:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .custom-font {
-                font-size: 30px;
-            }
-
-            .container {
-                padding: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Font Preview</h1>
-        <p class="custom-font">Ini adalah tampilan font saya!</p>
+    <div>
+        <div class="container">
+            <h1>Font Preview</h1>
+            <label for="font-size">Ukuran font:</label>
+            <input type="range" id="font-size" min="20" max="50" value="40">
 
-        <label for="font-size">Ukuran font:</label>
-        <input type="range" id="font-size" min="10" max="100" value="40">
+            <input type="text" id="custom-text" placeholder="Masukkan teks di sini..." value="Ini adalah tampilan font saya!">
 
-        <input type="text" id="custom-text" placeholder="Masukkan teks di sini..." value="Ini adalah tampilan font saya!">
+            <!-- Font preview section -->
+            <div class="preview-box">
+                <p class="custom-font">Ini adalah tampilan font saya!</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1>Character Preview</h1>
+            <div class="preview-box char-preview" id="char-preview"></div>
+        </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const fontSizeInput = document.getElementById('font-size');
-            const customTextInput = document.getElementById('custom-text');
-            const previewText = document.querySelector('.custom-font');
-
-            // Update font size
-            fontSizeInput.addEventListener('input', (event) => {
-                const newSize = event.target.value;
-                previewText.style.fontSize = `${newSize}px`;
-            });
-
-            // Update custom text
-            customTextInput.addEventListener('input', (event) => {
-                previewText.textContent = event.target.value;
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

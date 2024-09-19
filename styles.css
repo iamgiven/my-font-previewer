@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('./fonts/Myfont-Regular.ttf') format('truetype');
+}
+
+.custom-font {
+    font-family: 'CustomFont';
+    font-size: 40px;
+    margin: 20px 0;
+    color: #333;
+}
+
+label {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    font-size: 1.1rem;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Separate boxes for font and character preview */
+.preview-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Section for character preview */
+.char-preview {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.char-preview span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'CustomFont';
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .custom-font {
+        font-size: 30px;
+    }
+
+    input[type="text"] {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .char-preview span {
+        font-size: 20px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .container, .preview-box {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .char-preview span {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
